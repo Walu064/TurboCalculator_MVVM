@@ -8,4 +8,6 @@
     <string name="dzielenie">Dzielenie</string>
     <string name="plus">+</string>
     <string name="mynslnik">----</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="todo">TODO</string>
 </resources>
