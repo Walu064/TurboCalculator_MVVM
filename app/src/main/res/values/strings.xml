@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">laborka1asm</string>
+    <string name="wykonaj_dzia_anie">Wykonaj działanie!</string>
+    <string name="wynik_powy_szego_dzia_ania_to">Wynik powyższego działania to:</string>
+    <string name="dodawanie">Dodawanie</string>
+    <string name="odejmowanie">Odejmowanie</string>
+    <string name="mno_enie">Mnożenie</string>
+    <string name="dzielenie">Dzielenie</string>
+    <string name="plus">+</string>
 </resources>
