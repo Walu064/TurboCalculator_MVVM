@@ -13,9 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Deklaracje zmiennych do obsługi pół textView:
-        val signTextView : TextView = findViewById(R.id.sign_textView)
+        //Deklaracja zmiennej do obsługi pola textView:
         val resultTextView : TextView = findViewById(R.id.textView_result)
+
+        //Deklaracja zmiennej do obsługi pola imageView:
+        val signImageView : ImageView = findViewById(R.id.sign_imageView)
 
         //Deklaracje zmiennych do obsługi radioButtonów:
         val addRadioButton : RadioButton = findViewById(R.id.add_radioButton)
@@ -31,6 +33,22 @@ class MainActivity : AppCompatActivity() {
         val inputTextA : EditText = findViewById(R.id.inputA_editText)
         val inputTextB : EditText = findViewById(R.id.inputB_editText)
 
+        //Listener do zmiany ikonki działania przy zaznaczaniu wybranej opcji:
+        when (actionTypeRadioGroup.checkedRadioButtonId){
+            addRadioButton.id -> {
+                signImageView.setImageResource(R.drawable.ic_baseline_add_24)
+            }
+            subRadioButton.id -> {
+                signImageView.setImageResource(R.drawable.ic_baseline_add_24)
+            }
+            mulRadioButton.id -> {
+                signImageView.setImageResource(R.drawable.ic_baseline_add_24)
+            }
+            divRadioButton.id -> {
+                signImageView.setImageResource(R.drawable.ic_baseline_add_24)
+            }
+        }
+
         //Dodanie listenera do wykonania akcji po kliknięciu przycisku:
         executeButton.setOnClickListener{
             val aValue : Int = inputTextA.text.toString().toInt()
@@ -38,22 +56,19 @@ class MainActivity : AppCompatActivity() {
 
             when (actionTypeRadioGroup.checkedRadioButtonId) {
                 addRadioButton.id -> {
-                    signTextView.text = " + "
+                    signImageView.setImageResource(R.drawable.ic_baseline_add_24)
                     val result : Int = aValue + bValue
                     resultTextView.text = "Wynik powyższego działania to $result"
                 }
                 subRadioButton.id -> {
-                    signTextView.text = " - "
                     val result : Int = aValue - bValue
                     resultTextView.text = "Wynik powyższego działania to $result"
                 }
                 mulRadioButton.id -> {
-                    signTextView.text = " * "
                     val result : Int = aValue * bValue
                     resultTextView.text = "Wynik powyższego działania to $result"
                 }
                 divRadioButton.id -> {
-                    signTextView.text = " / "
                     val result : Int = aValue / bValue
                     resultTextView.text = "Wynik powyższego działania to $result"
                 }

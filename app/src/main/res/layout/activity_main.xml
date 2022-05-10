@@ -18,20 +18,8 @@
         app:layout_constraintHorizontal_bias="0.227"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474"
+        app:layout_constraintVertical_bias="0.471"
         tools:text="A" />
-
-    <TextView
-        android:id="@+id/sign_textView"
-        android:layout_width="56dp"
-        android:layout_height="62dp"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView_result"
-        app:layout_constraintEnd_toStartOf="@+id/inputB_editText"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toEndOf="@+id/inputA_editText"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.788" />
 
     <EditText
         android:id="@+id/inputB_editText"
@@ -45,10 +33,10 @@
         android:inputType="number|textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.982"
         app:layout_constraintStart_toEndOf="@+id/inputA_editText"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471"
+        app:layout_constraintVertical_bias="0.469"
         tools:text="B" />
 
     <TextView
@@ -111,15 +99,15 @@
     </RadioGroup>
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/sign_textView"
+        android:id="@+id/sign_imageView"
+        android:layout_width="79dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="184dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:ignore="ImageContrastCheck"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
