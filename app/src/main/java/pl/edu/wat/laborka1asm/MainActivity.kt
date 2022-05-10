@@ -34,19 +34,20 @@ class MainActivity : AppCompatActivity() {
         val inputTextB : EditText = findViewById(R.id.inputB_editText)
 
         //Listener do zmiany ikonki działania przy zaznaczaniu wybranej opcji:
-        when (actionTypeRadioGroup.checkedRadioButtonId){
-            addRadioButton.id -> {
-                signImageView.setImageResource(R.drawable.ic_baseline_add_24)
-            }
-            subRadioButton.id -> {
-                signImageView.setImageResource(R.drawable.ic_baseline_add_24)
-            }
-            mulRadioButton.id -> {
-                signImageView.setImageResource(R.drawable.ic_baseline_add_24)
-            }
-            divRadioButton.id -> {
-                signImageView.setImageResource(R.drawable.ic_baseline_add_24)
-            }
+        actionTypeRadioGroup.setOnClickListener {
+            when (actionTypeRadioGroup.checkedRadioButtonId) {
+                addRadioButton.id -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_add_24)
+                }
+                subRadioButton.id -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_subtract_24)
+                }
+                mulRadioButton.id -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_mul_24)
+                }
+                divRadioButton.id -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_div_24)
+                }
         }
 
         //Dodanie listenera do wykonania akcji po kliknięciu przycisku:
@@ -61,18 +62,21 @@ class MainActivity : AppCompatActivity() {
                     resultTextView.text = "Wynik powyższego działania to $result"
                 }
                 subRadioButton.id -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_subtract_24)
                     val result : Int = aValue - bValue
                     resultTextView.text = "Wynik powyższego działania to $result"
                 }
                 mulRadioButton.id -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_mul_24)
                     val result : Int = aValue * bValue
                     resultTextView.text = "Wynik powyższego działania to $result"
                 }
                 divRadioButton.id -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_div_24)
                     val result : Int = aValue / bValue
                     resultTextView.text = "Wynik powyższego działania to $result"
                 }
             }
         }
     }
-}
+}}
