@@ -57,7 +57,6 @@ class MainActivity : AppCompatActivity() {
 
         //Dodanie listenera do wykonania akcji po kliknięciu przycisku:
         executeButton.setOnClickListener{
-
             if((inputTextA.text.toString() == "A" || inputTextA.text.toString() == "")
                 || (inputTextB.text.toString() == "B" || inputTextB.text.toString() == ""))
             {
