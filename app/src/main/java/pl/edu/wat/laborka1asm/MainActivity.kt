@@ -57,29 +57,38 @@ class MainActivity : AppCompatActivity() {
 
         //Dodanie listenera do wykonania akcji po kliknięciu przycisku:
         executeButton.setOnClickListener{
-            val aValue : Int = inputTextA.text.toString().toInt()
-            val bValue : Int = inputTextB.text.toString().toInt()
 
-            when (actionTypeRadioGroup.checkedRadioButtonId) {
-                addRadioButton.id -> {
-                    signImageView.setImageResource(R.drawable.ic_baseline_add_24)
-                    val result : Int = aValue + bValue
-                    resultTextView.text = "Wynik powyższego działania to $result"
-                }
-                subRadioButton.id -> {
-                    signImageView.setImageResource(R.drawable.ic_baseline_subtract_24)
-                    val result : Int = aValue - bValue
-                    resultTextView.text = "Wynik powyższego działania to $result"
-                }
-                mulRadioButton.id -> {
-                    signImageView.setImageResource(R.drawable.ic_baseline_mul_24)
-                    val result : Int = aValue * bValue
-                    resultTextView.text = "Wynik powyższego działania to $result"
-                }
-                divRadioButton.id -> {
-                    signImageView.setImageResource(R.drawable.ic_baseline_div_24)
-                    val result : Int = aValue / bValue
-                    resultTextView.text = "Wynik powyższego działania to $result"
+            if((inputTextA.text.toString() == "A" || inputTextA.text.toString() == "")
+                || (inputTextB.text.toString() == "B" || inputTextB.text.toString() == ""))
+            {
+                resultTextView.text = "Wprowadź liczby całkowite do pól powyżej"
+            }
+            else
+            {
+                val aValue : Int = inputTextA.text.toString().toInt()
+                val bValue : Int = inputTextB.text.toString().toInt()
+
+                when (actionTypeRadioGroup.checkedRadioButtonId) {
+                    addRadioButton.id -> {
+                        signImageView.setImageResource(R.drawable.ic_baseline_add_24)
+                        val result : Int = aValue + bValue
+                        resultTextView.text = "Wynik powyższego działania to $result"
+                    }
+                    subRadioButton.id -> {
+                        signImageView.setImageResource(R.drawable.ic_baseline_subtract_24)
+                        val result : Int = aValue - bValue
+                        resultTextView.text = "Wynik powyższego działania to $result"
+                    }
+                    mulRadioButton.id -> {
+                        signImageView.setImageResource(R.drawable.ic_baseline_mul_24)
+                        val result : Int = aValue * bValue
+                        resultTextView.text = "Wynik powyższego działania to $result"
+                    }
+                    divRadioButton.id -> {
+                        signImageView.setImageResource(R.drawable.ic_baseline_div_24)
+                        val result : Int = aValue / bValue
+                        resultTextView.text = "Wynik powyższego działania to $result"
+                    }
                 }
             }
         }
