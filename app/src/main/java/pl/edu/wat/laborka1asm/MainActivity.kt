@@ -35,25 +35,23 @@ class MainActivity : AppCompatActivity() {
 
         //Dodanie listenera dla radioGroup:
         actionTypeRadioGroup.setOnCheckedChangeListener { _, _ ->
-            if(addRadioButton.isChecked)
-            {
-                signImageView.setImageResource(R.drawable.ic_baseline_add_24)
-                resultTextView.text = " ";
-            }
-            else if(subRadioButton.isChecked)
-            {
-                signImageView.setImageResource(R.drawable.ic_baseline_subtract_24)
-                resultTextView.text = " "
-            }
-            else if(mulRadioButton.isChecked)
-            {
-                signImageView.setImageResource(R.drawable.ic_baseline_mul_24)
-                resultTextView.text = " "
-            }
-            else if(divRadioButton.isChecked)
-            {
-                signImageView.setImageResource(R.drawable.ic_baseline_div_24)
-                resultTextView.text = " "
+            when {
+                addRadioButton.isChecked -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_add_24)
+                    resultTextView.text = " ";
+                }
+                subRadioButton.isChecked -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_subtract_24)
+                    resultTextView.text = " "
+                }
+                mulRadioButton.isChecked -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_mul_24)
+                    resultTextView.text = " "
+                }
+                divRadioButton.isChecked -> {
+                    signImageView.setImageResource(R.drawable.ic_baseline_div_24)
+                    resultTextView.text = " "
+                }
             }
         }
 
