@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val subRadioButton : RadioButton = findViewById(R.id.sub_radioButton)
         val mulRadioButton : RadioButton = findViewById(R.id.mul_radioButton)
         val divRadioButton : RadioButton = findViewById(R.id.div_radioButton)
-        val actionTypeRadioGroup :RadioGroup = findViewById(R.id.radioGroup)
+        val actionTypeRadioGroup : RadioGroup = findViewById(R.id.radioGroup)
 
         //Deklaracja zmiennej do obsługi buttona:
         val executeButton : Button = findViewById(R.id.execute_button)
@@ -33,21 +33,28 @@ class MainActivity : AppCompatActivity() {
         val inputTextA : EditText = findViewById(R.id.inputA_editText)
         val inputTextB : EditText = findViewById(R.id.inputB_editText)
 
-        //Listener do zmiany ikonki działania przy zaznaczaniu wybranej opcji:
-        actionTypeRadioGroup.setOnClickListener {
-            when (actionTypeRadioGroup.checkedRadioButtonId) {
-                addRadioButton.id -> {
-                    signImageView.setImageResource(R.drawable.ic_baseline_add_24)
-                }
-                subRadioButton.id -> {
-                    signImageView.setImageResource(R.drawable.ic_baseline_subtract_24)
-                }
-                mulRadioButton.id -> {
-                    signImageView.setImageResource(R.drawable.ic_baseline_mul_24)
-                }
-                divRadioButton.id -> {
-                    signImageView.setImageResource(R.drawable.ic_baseline_div_24)
-                }
+        //Dodanie listenera dla radioGroup:
+        actionTypeRadioGroup.setOnCheckedChangeListener { _, _ ->
+            if(addRadioButton.isChecked)
+            {
+                signImageView.setImageResource(R.drawable.ic_baseline_add_24)
+                resultTextView.text = " ";
+            }
+            else if(subRadioButton.isChecked)
+            {
+                signImageView.setImageResource(R.drawable.ic_baseline_subtract_24)
+                resultTextView.text = " "
+            }
+            else if(mulRadioButton.isChecked)
+            {
+                signImageView.setImageResource(R.drawable.ic_baseline_mul_24)
+                resultTextView.text = " "
+            }
+            else if(divRadioButton.isChecked)
+            {
+                signImageView.setImageResource(R.drawable.ic_baseline_div_24)
+                resultTextView.text = " "
+            }
         }
 
         //Dodanie listenera do wykonania akcji po kliknięciu przycisku:
@@ -79,4 +86,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-}}
+}
